@@ -1,0 +1,5 @@
+from langchain.text_splitter import RecursiveCharacterTextSplitter
+
+
+def build_text_splitter(chunk_size: int, chunk_overlap: int) -> RecursiveCharacterTextSplitter:
+    return RecursiveCharacterTextSplitter(chunk_size=chunk_size, chunk_overlap=chunk_overlap)

@@ -1,0 +1,38 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  font-family: "Sora", "Space Grotesk", system-ui, -apple-system, sans-serif;
+  color: #0f172a;
+  background-color: #f8fafc;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background-color: #f8fafc;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+@layer utilities {
+  .bg-aurora {
+    background:
+      radial-gradient(circle at top left, rgba(16, 185, 129, 0.18), transparent 45%),
+      radial-gradient(circle at 20% 40%, rgba(14, 116, 144, 0.16), transparent 40%),
+      radial-gradient(circle at 80% 20%, rgba(249, 115, 22, 0.14), transparent 38%),
+      #f8fafc;
+  }
+}
+
+@layer components {
+  .glass-panel {
+    background: rgba(255, 255, 255, 0.72);
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    box-shadow: 0 24px 60px -40px rgba(15, 23, 42, 0.45);
+    backdrop-filter: blur(18px);
+  }
+}
