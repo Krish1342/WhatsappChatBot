@@ -16,7 +16,7 @@ def classify_query(state: SupportState) -> SupportState:
     query = state.get("query", "")
     prompt = (
         "Classify the customer support query into one of: billing, technical, account, "
-        "shipping, complaint, general. Return JSON with {\"label\": \"...\"}.\n\n"
+        'shipping, complaint, general. Return JSON with {"label": "..."}.\n\n'
         f"Query: {query}"
     )
     response = GroqClient().generate(prompt).text
@@ -54,7 +54,7 @@ def evaluate_confidence(state: SupportState) -> SupportState:
     context = state.get("context", "")
     prompt = (
         "Score confidence from 0 to 1 for the response given the context. "
-        "Return JSON with {\"confidence\": 0.0}.\n\n"
+        'Return JSON with {"confidence": 0.0}.\n\n'
         f"Context:\n{context}\n\nResponse:\n{response}"
     )
     llm_text = GroqClient().generate(prompt).text
@@ -70,7 +70,7 @@ def analyze_sentiment(state: SupportState) -> SupportState:
     query = state.get("query", "")
     prompt = (
         "Analyze sentiment as positive, neutral, or negative. "
-        "Return JSON with {\"label\": \"...\", \"score\": 0.0}.\n\n"
+        'Return JSON with {"label": "...", "score": 0.0}.\n\n'
         f"Query: {query}"
     )
     llm_text = GroqClient().generate(prompt).text
@@ -88,11 +88,16 @@ def escalation_decision(state: SupportState) -> SupportState:
     classification = state.get("classification", "general")
 
     low_confidence = confidence < settings.escalation_confidence_threshold
-    negative_sentiment = sentiment == "negative" and sentiment_score <= settings.escalation_negative_threshold
+    negative_sentiment = (
+        sentiment == "negative"
+        and sentiment_score <= settings.escalation_negative_threshold
+    )
     high_risk_class = classification in {"billing", "complaint"}
 
     auto_resolve = {
-        item.strip() for item in settings.auto_resolve_classes.split(",") if item.strip()
+        item.strip()
+        for item in settings.auto_resolve_classes.split(",")
+        if item.strip()
     }
     prefers_auto_resolve = classification in auto_resolve and not negative_sentiment
 
@@ -164,7 +169,14 @@ def _heuristic_confidence(state: SupportState) -> float:
 
 def _heuristic_sentiment(text: str) -> tuple[str, float]:
     lowered = text.lower()
-    negative_keywords = ["angry", "frustrated", "refund", "cancel", "complaint", "terrible"]
+    negative_keywords = [
+        "angry",
+        "frustrated",
+        "refund",
+        "cancel",
+        "complaint",
+        "terrible",
+    ]
     positive_keywords = ["thanks", "great", "awesome", "love", "appreciate"]
 
     if any(word in lowered for word in negative_keywords):

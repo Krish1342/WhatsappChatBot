@@ -47,7 +47,11 @@ async def _handle_whatsapp_webhook(
             "profile_name": profile_name,
         }
     )
-    response_text = result.get("final_response") or result.get("response") or "Thanks for reaching out."
+    response_text = (
+        result.get("final_response")
+        or result.get("response")
+        or "Thanks for reaching out."
+    )
     should_escalate = bool(result.get("should_escalate"))
     ticket_summary = result.get("ticket_summary")
 

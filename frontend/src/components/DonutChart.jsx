@@ -27,8 +27,12 @@ export default function DonutChart({ value, label }) {
         />
       </svg>
       <div>
-        <p className="text-xs uppercase tracking-[0.3em] text-slate-500">{label}</p>
-        <p className="mt-2 text-2xl font-semibold text-slate-900">{Math.round(value * 100)}%</p>
+        <p className="text-xs uppercase tracking-[0.3em] text-slate-500">
+          {label}
+        </p>
+        <p className="mt-2 text-2xl font-semibold text-slate-900">
+          {Math.round(value * 100)}%
+        </p>
       </div>
     </div>
   );

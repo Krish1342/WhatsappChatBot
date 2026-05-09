@@ -2,8 +2,12 @@ export default function TopBar({ title, subtitle }) {
   return (
     <header className="glass-panel flex flex-col gap-4 rounded-[28px] px-6 py-5 md:flex-row md:items-center md:justify-between">
       <div>
-        <p className="text-xs uppercase tracking-[0.4em] text-slate-500">{subtitle}</p>
-        <h1 className="mt-2 text-2xl font-semibold text-slate-900 md:text-3xl">{title}</h1>
+        <p className="text-xs uppercase tracking-[0.4em] text-slate-500">
+          {subtitle}
+        </p>
+        <h1 className="mt-2 text-2xl font-semibold text-slate-900 md:text-3xl">
+          {title}
+        </h1>
       </div>
       <div className="flex flex-wrap items-center gap-3">
         <div className="glass-panel flex items-center gap-2 rounded-full px-4 py-2 text-sm text-slate-600">

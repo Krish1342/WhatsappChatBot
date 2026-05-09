@@ -5,9 +5,12 @@ export default function KnowledgeDropzone({ onSelect, status }) {
         PDF
       </div>
       <div>
-        <h3 className="text-lg font-semibold text-slate-900">Drop knowledge PDFs</h3>
+        <h3 className="text-lg font-semibold text-slate-900">
+          Drop knowledge PDFs
+        </h3>
         <p className="mt-2 text-sm text-slate-600">
-          Drag and drop or select files. We will chunk, embed, and index automatically.
+          Drag and drop or select files. We will chunk, embed, and index
+          automatically.
         </p>
       </div>
       <button

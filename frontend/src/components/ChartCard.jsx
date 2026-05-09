@@ -9,7 +9,9 @@ export default function ChartCard({ title, value, subtitle }) {
     <div className="glass-panel rounded-3xl p-6">
       <div className="flex items-center justify-between">
         <div>
-          <p className="text-xs uppercase tracking-[0.3em] text-slate-500">{subtitle}</p>
+          <p className="text-xs uppercase tracking-[0.3em] text-slate-500">
+            {subtitle}
+          </p>
           <p className="mt-2 text-lg font-semibold text-slate-900">{title}</p>
         </div>
         <p className="text-2xl font-semibold text-slate-900">{value}</p>

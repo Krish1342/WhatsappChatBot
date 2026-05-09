@@ -15,8 +15,12 @@ export default function TicketTable({ rows }) {
         <tbody>
           {rows.map((row) => (
             <tr key={row.id} className="border-t border-white/60">
-              <td className="px-6 py-4 font-semibold text-slate-900">{row.id}</td>
-              <td className="px-6 py-4 text-slate-600">{row.subject || "(no subject)"}</td>
+              <td className="px-6 py-4 font-semibold text-slate-900">
+                {row.id}
+              </td>
+              <td className="px-6 py-4 text-slate-600">
+                {row.subject || "(no subject)"}
+              </td>
               <td className="px-6 py-4 text-slate-600">{row.channel || "-"}</td>
               <td className="px-6 py-4">
                 <span className="rounded-full bg-amber-100 px-3 py-1 text-xs font-semibold text-amber-700">

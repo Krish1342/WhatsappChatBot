@@ -31,6 +31,7 @@ See [docs/SETUP.md](docs/SETUP.md) for local setup details.
 ## Environment Variables
 
 Backend (example values in [.env.example](.env.example)):
+
 - `DATABASE_URL`
 - `GEMINI_API_KEY`
 - `TWILIO_ACCOUNT_SID`
@@ -39,25 +40,26 @@ Backend (example values in [.env.example](.env.example)):
 - `TWILIO_VALIDATE_WEBHOOK`
 
 Frontend (example values in [frontend/.env.example](frontend/.env.example)):
+
 - `VITE_API_BASE_URL`
 
 ## Local Development
 
 Backend:
 
-1) Create a virtual environment
-2) Install dependencies: pip install -r requirements.txt
-3) Start API: uvicorn app.main:app --reload --host 0.0.0.0 --port 8000
+1. Create a virtual environment
+2. Install dependencies: pip install -r requirements.txt
+3. Start API: uvicorn app.main:app --reload --host 0.0.0.0 --port 8000
 
 Frontend:
 
-1) cd frontend
-2) npm install
-3) npm run dev
+1. cd frontend
+2. npm install
+3. npm run dev
 
 Docker:
 
-1) docker compose up --build
+1. docker compose up --build
 
 ## Deployment
 

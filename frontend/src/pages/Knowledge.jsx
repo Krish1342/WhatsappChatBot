@@ -53,7 +53,9 @@ export default function Knowledge() {
           />
         </div>
         <div className="glass-panel rounded-3xl p-6">
-          <p className="text-xs uppercase tracking-[0.3em] text-slate-500">Recent uploads</p>
+          <p className="text-xs uppercase tracking-[0.3em] text-slate-500">
+            Recent uploads
+          </p>
           <div className="mt-6 flex flex-col gap-4">
             {documents.map((doc, index) => (
               <motion.div
@@ -64,7 +66,9 @@ export default function Knowledge() {
                 className="flex items-center justify-between rounded-2xl bg-white/70 px-4 py-3"
               >
                 <div>
-                  <p className="text-sm font-semibold text-slate-900">{doc.name}</p>
+                  <p className="text-sm font-semibold text-slate-900">
+                    {doc.name}
+                  </p>
                   <p className="text-xs text-slate-500">{doc.updated}</p>
                 </div>
                 <span className="rounded-full bg-emerald-100 px-3 py-1 text-xs font-semibold text-emerald-700">

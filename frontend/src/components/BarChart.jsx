@@ -5,7 +5,9 @@ export default function BarChart({ title, subtitle }) {
     <div className="glass-panel rounded-3xl p-6">
       <div className="flex items-center justify-between">
         <div>
-          <p className="text-xs uppercase tracking-[0.3em] text-slate-500">{subtitle}</p>
+          <p className="text-xs uppercase tracking-[0.3em] text-slate-500">
+            {subtitle}
+          </p>
           <p className="mt-2 text-lg font-semibold text-slate-900">{title}</p>
         </div>
         <span className="rounded-full bg-emerald-100 px-3 py-1 text-xs font-semibold text-emerald-700">
@@ -14,7 +16,10 @@ export default function BarChart({ title, subtitle }) {
       </div>
       <div className="mt-6 flex items-end gap-3">
         {barSeries.map((value, index) => (
-          <div key={`bar-${index}`} className="flex flex-1 flex-col items-center gap-2">
+          <div
+            key={`bar-${index}`}
+            className="flex flex-1 flex-col items-center gap-2"
+          >
             <div
               className="w-full rounded-2xl bg-slate-900/80"
               style={{ height: `${value}%` }}

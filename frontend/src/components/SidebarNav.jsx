@@ -16,7 +16,9 @@ export default function SidebarNav() {
         <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-slate-900 text-white">
           SP
         </div>
-        <p className="mt-4 text-xs uppercase tracking-[0.35em] text-slate-500">SupportPilot</p>
+        <p className="mt-4 text-xs uppercase tracking-[0.35em] text-slate-500">
+          SupportPilot
+        </p>
         <p className="text-lg font-semibold text-slate-900">Ops Suite</p>
       </div>
       <nav className="flex flex-1 flex-col gap-2 text-sm font-medium">

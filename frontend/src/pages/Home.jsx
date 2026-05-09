@@ -23,8 +23,9 @@ export default function Home() {
               Modern customer support, orchestrated by AI
             </h1>
             <p className="mt-4 max-w-2xl text-lg text-slate-600">
-              Bring together WhatsApp, knowledge bases, and human escalation into one intelligent
-              console. SupportPilot AI turns every conversation into a fast, empathetic resolution.
+              Bring together WhatsApp, knowledge bases, and human escalation
+              into one intelligent console. SupportPilot AI turns every
+              conversation into a fast, empathetic resolution.
             </p>
             <div className="mt-8 flex flex-wrap items-center gap-4">
               <Link
@@ -65,7 +66,9 @@ export default function Home() {
               transition={{ delay: 0.1 * index, duration: 0.5 }}
               className="glass-panel rounded-3xl p-6"
             >
-              <h3 className="text-lg font-semibold text-slate-900">{card.title}</h3>
+              <h3 className="text-lg font-semibold text-slate-900">
+                {card.title}
+              </h3>
               <p className="mt-2 text-sm text-slate-600">{card.body}</p>
             </motion.div>
           ))}
@@ -78,8 +81,12 @@ export default function Home() {
             { label: "CSAT uplift", value: "+18%" },
           ].map((metric) => (
             <div key={metric.label}>
-              <p className="text-xs uppercase tracking-[0.3em] text-slate-500">{metric.label}</p>
-              <p className="mt-3 text-3xl font-semibold text-slate-900">{metric.value}</p>
+              <p className="text-xs uppercase tracking-[0.3em] text-slate-500">
+                {metric.label}
+              </p>
+              <p className="mt-3 text-3xl font-semibold text-slate-900">
+                {metric.value}
+              </p>
             </div>
           ))}
         </div>

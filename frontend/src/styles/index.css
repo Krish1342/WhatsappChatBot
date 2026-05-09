@@ -3,7 +3,12 @@
 @tailwind utilities;
 
 :root {
-  font-family: "Sora", "Space Grotesk", system-ui, -apple-system, sans-serif;
+  font-family:
+    "Sora",
+    "Space Grotesk",
+    system-ui,
+    -apple-system,
+    sans-serif;
   color: #0f172a;
   background-color: #f8fafc;
 }
@@ -21,9 +26,21 @@ body {
 @layer utilities {
   .bg-aurora {
     background:
-      radial-gradient(circle at top left, rgba(16, 185, 129, 0.18), transparent 45%),
-      radial-gradient(circle at 20% 40%, rgba(14, 116, 144, 0.16), transparent 40%),
-      radial-gradient(circle at 80% 20%, rgba(249, 115, 22, 0.14), transparent 38%),
+      radial-gradient(
+        circle at top left,
+        rgba(16, 185, 129, 0.18),
+        transparent 45%
+      ),
+      radial-gradient(
+        circle at 20% 40%,
+        rgba(14, 116, 144, 0.16),
+        transparent 40%
+      ),
+      radial-gradient(
+        circle at 80% 20%,
+        rgba(249, 115, 22, 0.14),
+        transparent 38%
+      ),
       #f8fafc;
   }
 }

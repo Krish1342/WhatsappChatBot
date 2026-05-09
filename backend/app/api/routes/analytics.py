@@ -17,7 +17,9 @@ async def get_analytics(db: AsyncSession = Depends(get_db)) -> AnalyticsResponse
 
     total_conversations = int(conversation_count or 0)
     total_tickets = int(ticket_count or 0)
-    escalation_rate = (total_tickets / total_conversations) if total_conversations else 0.0
+    escalation_rate = (
+        (total_tickets / total_conversations) if total_conversations else 0.0
+    )
 
     return AnalyticsResponse(
         total_conversations=total_conversations,

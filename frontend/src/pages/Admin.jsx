@@ -38,8 +38,8 @@ export default function Admin() {
   const handleChange = (ticketId, field, value) => {
     setTickets((prev) =>
       prev.map((ticket) =>
-        ticket.id === ticketId ? { ...ticket, [field]: value } : ticket
-      )
+        ticket.id === ticketId ? { ...ticket, [field]: value } : ticket,
+      ),
     );
   };
 
@@ -61,8 +61,12 @@ export default function Admin() {
           <tbody>
             {tickets.map((ticket) => (
               <tr key={ticket.id} className="border-t border-white/60">
-                <td className="px-6 py-4 font-semibold text-slate-900">{ticket.id}</td>
-                <td className="px-6 py-4 text-slate-600">{ticket.channel || "-"}</td>
+                <td className="px-6 py-4 font-semibold text-slate-900">
+                  {ticket.id}
+                </td>
+                <td className="px-6 py-4 text-slate-600">
+                  {ticket.channel || "-"}
+                </td>
                 <td className="px-6 py-4 text-slate-600">
                   <input
                     className="w-full rounded-2xl border border-slate-200 bg-white/80 px-3 py-2 text-sm"

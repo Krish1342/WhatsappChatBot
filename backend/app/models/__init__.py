@@ -6,10 +6,10 @@ from app.models.uploaded_document import UploadedDocument
 from app.models.user import User
 
 __all__ = [
-	"Conversation",
-	"Escalation",
-	"Message",
-	"Ticket",
-	"UploadedDocument",
-	"User",
+    "Conversation",
+    "Escalation",
+    "Message",
+    "Ticket",
+    "UploadedDocument",
+    "User",
 ]

@@ -61,14 +61,26 @@ export default function Dashboard() {
           ))}
         </div>
         <div className="grid gap-6 lg:grid-cols-2">
-          <ChartCard title="Resolution velocity" subtitle="Last 12 hours" value="92%" />
-          <ChartCard title="Sentiment trend" subtitle="Customer mood" value="+0.42" />
+          <ChartCard
+            title="Resolution velocity"
+            subtitle="Last 12 hours"
+            value="92%"
+          />
+          <ChartCard
+            title="Sentiment trend"
+            subtitle="Customer mood"
+            value="+0.42"
+          />
         </div>
         <div className="grid gap-6 lg:grid-cols-[1.2fr_1fr]">
           <BarChart title="Volume by hour" subtitle="Inbound load" />
           <div className="grid gap-4">
             {sentimentBreakdown.map((item) => (
-              <DonutChart key={item.label} value={item.value} label={item.label} />
+              <DonutChart
+                key={item.label}
+                value={item.value}
+                label={item.label}
+              />
             ))}
           </div>
         </div>
@@ -84,16 +96,24 @@ export default function Dashboard() {
             { title: "Knowledge coverage", value: "86% indexed" },
           ].map((item) => (
             <div key={item.title}>
-              <p className="text-xs uppercase tracking-[0.3em] text-slate-500">{item.title}</p>
-              <p className="mt-3 text-lg font-semibold text-slate-900">{item.value}</p>
+              <p className="text-xs uppercase tracking-[0.3em] text-slate-500">
+                {item.title}
+              </p>
+              <p className="mt-3 text-lg font-semibold text-slate-900">
+                {item.value}
+              </p>
             </div>
           ))}
         </motion.div>
         <div className="grid gap-4 md:grid-cols-3">
           {insightCards.map((card) => (
             <div key={card.label} className="glass-panel rounded-3xl p-5">
-              <p className="text-xs uppercase tracking-[0.3em] text-slate-500">{card.label}</p>
-              <p className="mt-3 text-xl font-semibold text-slate-900">{card.value}</p>
+              <p className="text-xs uppercase tracking-[0.3em] text-slate-500">
+                {card.label}
+              </p>
+              <p className="mt-3 text-xl font-semibold text-slate-900">
+                {card.value}
+              </p>
               <p className="mt-2 text-sm text-slate-500">{card.detail}</p>
             </div>
           ))}

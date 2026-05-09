@@ -20,7 +20,9 @@ export default function Layout({ children }) {
               <p className="text-xs font-semibold uppercase tracking-[0.35em] text-slate-500">
                 SupportPilot AI
               </p>
-              <p className="text-lg font-semibold text-slate-900">Customer Support OS</p>
+              <p className="text-lg font-semibold text-slate-900">
+                Customer Support OS
+              </p>
             </div>
           </div>
           <nav className="hidden items-center gap-6 text-sm font-medium text-slate-600 md:flex">

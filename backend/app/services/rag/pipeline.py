@@ -17,7 +17,9 @@ class IngestionResult:
 
 
 class RagPipeline:
-    def __init__(self, upload_dir: Path | None = None, index_dir: Path | None = None) -> None:
+    def __init__(
+        self, upload_dir: Path | None = None, index_dir: Path | None = None
+    ) -> None:
         self._upload_dir = upload_dir or Path(settings.rag_upload_dir)
         self._index_dir = index_dir or Path(settings.rag_index_dir)
         self._embeddings = SentenceTransformerEmbeddings(settings.rag_embedding_model)
@@ -26,9 +28,13 @@ class RagPipeline:
             metadata_path=self._index_dir / "metadata.json",
             dimension=self._embeddings.dimension,
         )
-        self._splitter = build_text_splitter(settings.rag_chunk_size, settings.rag_chunk_overlap)
+        self._splitter = build_text_splitter(
+            settings.rag_chunk_size, settings.rag_chunk_overlap
+        )
 
-    def ingest_pdf(self, file_path: Path, source_name: str | None = None) -> IngestionResult:
+    def ingest_pdf(
+        self, file_path: Path, source_name: str | None = None
+    ) -> IngestionResult:
         text = extract_text_from_pdf(file_path)
         if not text:
             return IngestionResult(document_id="", chunks=0, stored=False)
@@ -36,7 +42,11 @@ class RagPipeline:
         vectors = self._embeddings.embed_documents(chunks)
         doc_id = str(uuid.uuid4())
         payloads = [
-            {"text": chunk, "source": source_name or file_path.name, "document_id": doc_id}
+            {
+                "text": chunk,
+                "source": source_name or file_path.name,
+                "document_id": doc_id,
+            }
             for chunk in chunks
         ]
         self._store.add(vectors, payloads)

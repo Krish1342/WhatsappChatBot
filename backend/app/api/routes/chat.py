@@ -14,7 +14,9 @@ _graph = build_support_graph()
 
 
 @router.post("/chat", response_model=ChatResponse)
-async def chat(request: ChatRequest, db: AsyncSession = Depends(get_db)) -> ChatResponse:
+async def chat(
+    request: ChatRequest, db: AsyncSession = Depends(get_db)
+) -> ChatResponse:
     if not request.query.strip():
         raise HTTPException(status_code=400, detail="Query is required")
 
@@ -49,7 +51,9 @@ async def chat(request: ChatRequest, db: AsyncSession = Depends(get_db)) -> Chat
         }
     )
 
-    response_text = graph_result.get("final_response") or graph_result.get("response") or ""
+    response_text = (
+        graph_result.get("final_response") or graph_result.get("response") or ""
+    )
     should_escalate = bool(graph_result.get("should_escalate"))
     ticket_summary = graph_result.get("ticket_summary")
 

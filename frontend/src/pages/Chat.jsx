@@ -24,7 +24,12 @@ export default function Chat() {
     if (status === "Thinking") {
       return ["Drafting reply", "Confidence pending", "RAG lookup"];
     }
-    return ["High confidence", "Billing", "Sentiment: neutral", "Auto-escalation off"];
+    return [
+      "High confidence",
+      "Billing",
+      "Sentiment: neutral",
+      "Auto-escalation off",
+    ];
   }, [status]);
 
   const handleSend = async () => {
@@ -44,7 +49,10 @@ export default function Chat() {
       });
       const payload = response.data;
       setConversationId(payload.conversation_id);
-      setMessages((prev) => [...prev, { role: "assistant", content: payload.response }]);
+      setMessages((prev) => [
+        ...prev,
+        { role: "assistant", content: payload.response },
+      ]);
       setStatus(payload.should_escalate ? "Escalated" : "Resolved");
     } catch (error) {
       setMessages((prev) => [
@@ -61,8 +69,12 @@ export default function Chat() {
         <div className="glass-panel flex flex-col gap-6 rounded-3xl p-6">
           <div className="flex items-center justify-between">
             <div>
-              <p className="text-xs uppercase tracking-[0.3em] text-slate-500">Active thread</p>
-              <h2 className="mt-2 text-xl font-semibold text-slate-900">Rhea Patel</h2>
+              <p className="text-xs uppercase tracking-[0.3em] text-slate-500">
+                Active thread
+              </p>
+              <h2 className="mt-2 text-xl font-semibold text-slate-900">
+                Rhea Patel
+              </h2>
             </div>
             <span className="rounded-full bg-emerald-100 px-3 py-1 text-xs font-semibold text-emerald-700">
               WhatsApp
@@ -89,7 +101,9 @@ export default function Chat() {
         </div>
         <div className="flex flex-col gap-6">
           <div className="glass-panel rounded-3xl p-6">
-            <p className="text-xs uppercase tracking-[0.3em] text-slate-500">AI summary</p>
+            <p className="text-xs uppercase tracking-[0.3em] text-slate-500">
+              AI summary
+            </p>
             <p className="mt-4 text-sm text-slate-600">
               {status === "Escalated"
                 ? "Escalation requested. Ticket created for the human team."
@@ -107,7 +121,9 @@ export default function Chat() {
             </div>
           </div>
           <div className="glass-panel rounded-3xl p-6">
-            <p className="text-xs uppercase tracking-[0.3em] text-slate-500">Suggested actions</p>
+            <p className="text-xs uppercase tracking-[0.3em] text-slate-500">
+              Suggested actions
+            </p>
             <div className="mt-4 flex flex-col gap-3 text-sm text-slate-700">
               <button className="rounded-2xl bg-slate-900 px-4 py-3 text-left text-white">
                 Issue refund request
